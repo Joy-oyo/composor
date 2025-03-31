@@ -1,0 +1,129 @@
+:root {
+    --tencent-blue: #2080F0;
+    --dark-blue: #1a6acc;
+}
+
+.bg-tencent-blue {
+    background-color: var(--tencent-blue) !important;
+}
+
+.btn-tencent-blue {
+    background-color: var(--tencent-blue);
+    color: white;
+}
+
+.btn-tencent-blue:hover {
+    background-color: var(--dark-blue);
+    color: white;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--tencent-blue) 0%, var(--dark-blue) 100%);
+    padding: 4rem 0;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.product-card {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+}
+
+.product-card:hover {
+    border-color: var(--tencent-blue);
+}
+
+.form-check-input:checked {
+    background-color: var(--tencent-blue);
+    border-color: var(--tencent-blue);
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: white !important;
+}
+
+/* Add these new styles */
+.nav-tabs .nav-link {
+    color: var(--tencent-blue);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--tencent-blue) !important;
+    font-weight: 600;
+}
+
+#previewContent {
+    min-height: 400px;
+}
+
+.preview-section {
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+/* Adjust form spacing */
+.form-label {
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+/* Make product cards more compact */
+.product-card .card-body {
+    padding: 0.75rem;
+}
+
+/* Adjust spacing for better layout */
+.container-fluid {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Adjust card margins */
+.card.shadow {
+    margin-bottom: 1rem;
+}
+
+/* Make the preview section sticky */
+@media (min-width: 768px) {
+    .sticky-preview {
+        position: sticky;
+        top: 1rem;
+    }
+}
+
+.row.g-3 {
+    --bs-gutter-y: 1rem;
+}
+
+.email-preview {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.email-preview pre {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #333;
+} 

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Materials Composer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- Add these in the head section -->
+    <script src="productDatabase.js"></script>
+    <script src="emailGenerator.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-tencent-blue">
+        <div class="container">
+            <a class="navbar-brand" href="#">Product Materials Composer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container-fluid py-4">
+        <div class="row">
+            <!-- Left Side - Composer Form -->
+            <div class="col-md-5">
+                <div class="card shadow-lg">
+                    <div class="card-body p-4">
+                        <h2 class="mb-4">Compose Materials</h2>
+                        <form>
+                            <div class="row g-3">
+                                <!-- Add sender information section -->
+                                <div class="col-12">
+                                    <div class="card border-light bg-light mb-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-3">Sender Information</h5>
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label for="senderName" class="form-label">Your Name</label>
+                                                    <input type="text" class="form-control" id="senderName" placeholder="Enter your full name" required>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="senderTitle" class="form-label">Your Title</label>
+                                                    <input type="text" class="form-control" id="senderTitle" placeholder="e.g., Solution Architect" required>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label for="senderEmail" class="form-label">Your Email</label>
+                                                    <input type="email" class="form-control" id="senderEmail" placeholder="your.email@tencent.com" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Existing client name field -->
+                                <div class="col-12">
+                                    <label for="fullName" class="form-label">Client Name</label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="Enter client's full name" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="products" class="form-label">Interested Products</label>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="callkit" id="callkit">
+                                                        <label class="form-check-label fw-bold" for="callkit">
+                                                            Call Kit
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted">Complete UI components for voice/video calls</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="conferencekit" id="conferencekit">
+                                                        <label class="form-check-label fw-bold" for="conferencekit">
+                                                            Conference Kit
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted">UI solution for virtual conferences</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="chatkit" id="chatkit">
+                                                        <label class="form-check-label fw-bold" for="chatkit">
+                                                            Chat Kit
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted">Ready-to-use chat interface components</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="livekit" id="livekit">
+                                                        <label class="form-check-label fw-bold" for="livekit">
+                                                            Live Kit
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted">Interactive live streaming UI components</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="rtcengine" id="rtcengine">
+                                                        <label class="form-check-label fw-bold" for="rtcengine">
+                                                            RTC Engine
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted">Core real-time communication engine</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="gme" id="gme">
+                                                        <label class="form-check-label fw-bold" for="gme">
+                                                            Game Multimedia Engine (GME)
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted">Audio solutions for gaming</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="beautyar" id="beautyar">
+                                                        <label class="form-check-label fw-bold" for="beautyar">
+                                                            BeautyAR
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted">Advanced beauty and AR filters</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card h-100">
+                                                <div class="card-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="conversationalai" id="conversationalai">
+                                                        <label class="form-check-label fw-bold" for="conversationalai">
+                                                            Conversational AI
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted">Intelligent chatbot and AI solutions</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Schedule a Meeting</label>
+                                    <div class="card border-light bg-light">
+                                        <div class="card-body">
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="meetingPreference" id="flexibleTime" checked>
+                                                    <label class="form-check-label" for="flexibleTime">
+                                                        <strong>I'm flexible with time</strong>
+                                                        <p class="text-muted small mb-0">Our team will propose meeting times based on your timezone</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="meetingPreference" id="specificTime">
+                                                    <label class="form-check-label" for="specificTime">
+                                                        <strong>I want to schedule right now</strong>
+                                                        <p class="text-muted small mb-0">Choose from available time slots in our calendar</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div id="calendlySection" class="mt-3" style="display: none;">
+                                                <a href="https://calendly.com/your-calendar" 
+                                                   class="btn btn-primary" 
+                                                   target="_blank">
+                                                    Schedule via Calendly
+                                                </a>
+                                            </div>
+                                            <div id="flexibleSection" class="mt-3">
+                                                <div class="row g-3">
+                                                    <div class="col-md-6">
+                                                        <label for="timezone" class="form-label">Your Timezone</label>
+                                                        <select class="form-select" id="timezone" required>
+                                                            <option value="">Select Timezone</option>
+                                                            <option value="UTC-8">Pacific Time (PT)</option>
+                                                            <option value="UTC-5">Eastern Time (ET)</option>
+                                                            <option value="UTC+0">UTC</option>
+                                                            <option value="UTC+8">China Standard Time (CST)</option>
+                                                            <option value="UTC+9">Japan Standard Time (JST)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="preferredTime" class="form-label">Best Time to Meet</label>
+                                                        <select class="form-select" id="preferredTime" required>
+                                                            <option value="">Select Preferred Time</option>
+                                                            <option value="morning">Morning (9AM - 12PM)</option>
+                                                            <option value="afternoon">Afternoon (1PM - 5PM)</option>
+                                                            <option value="evening">Evening (6PM - 9PM)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Additional Notes</label>
+                                    <textarea class="form-control" id="message" rows="3" placeholder="Any specific topics you'd like to discuss?"></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="button" class="btn btn-tencent-blue btn-lg" onclick="generateEmailPreview()">Generate Email</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Preview Section -->
+            <div class="col-md-7">
+                <div class="card shadow-lg mb-4">
+                    <div class="card-body p-4">
+                        <ul class="nav nav-tabs" id="previewTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="email-tab" data-bs-toggle="tab" data-bs-target="#emailPreview" type="button" role="tab">Email Preview</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="presentation-tab" data-bs-toggle="tab" data-bs-target="#presentationPreview" type="button" role="tab">Presentation Preview</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-3" id="previewContent">
+                            <div class="tab-pane fade show active" id="emailPreview" role="tabpanel">
+                                <div class="border rounded p-3 bg-light" style="min-height: 500px;">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <h5>Email Preview</h5>
+                                        <button class="btn btn-sm btn-tencent-blue" onclick="copyToClipboard()">
+                                            <i class="fas fa-copy"></i> Copy
+                                        </button>
+                                    </div>
+                                    <div id="emailContent">
+                                        <em>Generated email will appear here...</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="presentationPreview" role="tabpanel">
+                                <div class="border rounded p-3 bg-light" style="min-height: 500px;">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <h5>Presentation Preview</h5>
+                                        <button class="btn btn-sm btn-tencent-blue">
+                                            <i class="fas fa-download"></i> Download
+                                        </button>
+                                    </div>
+                                    <div id="presentationContent">
+                                        <em>Generated presentation preview will appear here...</em>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container-fluid bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Features</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-tencent-blue text-white rounded-circle d-inline-flex p-3 mb-3">
+                                <i class="fas fa-envelope fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h4">Email Templates</h3>
+                            <p class="card-text">Generate professional emails with pre-defined templates.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-tencent-blue text-white rounded-circle d-inline-flex p-3 mb-3">
+                                <i class="fas fa-presentation fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h4">Presentation Generator</h3>
+                            <p class="card-text">Create customized presentation decks in minutes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-tencent-blue text-white rounded-circle d-inline-flex p-3 mb-3">
+                                <i class="fas fa-magic fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h4">Smart Automation</h3>
+                            <p class="card-text">Save time with intelligent content generation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="mb-3">About This Tool</h5>
+                    <p>An internal tool for solution architects and account managers to generate professional client communications.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="mb-3">Support</h5>
+                    <p>For internal support, please contact the IT team.</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Tencent Cloud. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Font Awesome -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+
+    <!-- Add this before closing body tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const flexibleTime = document.getElementById('flexibleTime');
+            const specificTime = document.getElementById('specificTime');
+            const calendlySection = document.getElementById('calendlySection');
+            const flexibleSection = document.getElementById('flexibleSection');
+
+            function toggleSections() {
+                if (specificTime.checked) {
+                    calendlySection.style.display = 'block';
+                    flexibleSection.style.display = 'none';
+                } else {
+                    calendlySection.style.display = 'none';
+                    flexibleSection.style.display = 'block';
+                }
+            }
+
+            flexibleTime.addEventListener('change', toggleSections);
+            specificTime.addEventListener('change', toggleSections);
+        });
+
+        const emailGenerator = new EmailGenerator(productDatabase);
+
+        function generateEmailPreview() {
+            // Collect form data
+            const formData = {
+                clientName: document.getElementById('fullName').value,
+                selectedProducts: Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                    .map(cb => cb.value),
+                meetingPreference: document.querySelector('input[name="meetingPreference"]:checked').value,
+                timezone: document.getElementById('timezone').value,
+                preferredTime: document.getElementById('preferredTime').value,
+                additionalNotes: document.getElementById('message').value,
+                // Add sender information
+                senderName: document.getElementById('senderName').value,
+                senderTitle: document.getElementById('senderTitle').value,
+                senderEmail: document.getElementById('senderEmail').value
+            };
+
+            // Update validation
+            if (!validateForm(formData)) {
+                return;
+            }
+
+            // Generate email
+            const emailContent = emailGenerator.generateEmail(formData);
+
+            // Display email in preview
+            document.getElementById('emailContent').innerHTML = formatEmailContent(emailContent);
+        }
+
+        function validateForm(formData) {
+            if (!formData.senderName || !formData.senderTitle || !formData.senderEmail) {
+                alert('Please fill in all sender information');
+                return false;
+            }
+            if (!formData.clientName) {
+                alert('Please enter client name');
+                return false;
+            }
+            if (formData.selectedProducts.length === 0) {
+                alert('Please select at least one product');
+                return false;
+            }
+            if (formData.meetingPreference === 'flexible' && (!formData.timezone || !formData.preferredTime)) {
+                alert('Please select timezone and preferred meeting time');
+                return false;
+            }
+            return true;
+        }
+
+        function formatEmailContent(content) {
+            return `<div class="email-preview">
+                <pre style="white-space: pre-wrap; font-family: Arial, sans-serif; padding: 1rem;">${content}</pre>
+            </div>`;
+        }
+
+        function copyToClipboard() {
+            const emailContent = document.querySelector('.email-preview pre');
+            if (emailContent) {
+                navigator.clipboard.writeText(emailContent.textContent)
+                    .then(() => {
+                        const button = document.querySelector('#emailPreview button');
+                        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                        setTimeout(() => {
+                            button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                        }, 2000);
+                    })
+                    .catch(err => console.error('Failed to copy:', err));
+            }
+        }
+    </script>
+</body>
+</html>
